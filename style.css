@@ -360,19 +360,25 @@ section .button button:hover {
   color: #4070f4;
 }
 
-/* My Services CSS */
+/* General Section Styles */
 .services {
-  padding: 50px 100px;
+  padding: 50px 5%;
   background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.services .content .title {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .services .content .title span {
-  font-size: 36px;
+  font-size: 2.5rem;
   color: #333;
-  display: block;
-  margin-bottom: 20px;
+  font-weight: bold;
 }
 
+/* Grid Layout for Boxes */
 .services .boxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -380,12 +386,15 @@ section .button button:hover {
 }
 
 .services .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
 }
 
 .services .box:hover {
@@ -393,6 +402,7 @@ section .button button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Image Styles */
 .services .box .icon img {
   width: 100%;
   height: auto;
@@ -400,8 +410,9 @@ section .button button:hover {
   margin-bottom: 15px;
 }
 
+/* Content Styles */
 .services .box .topic {
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
@@ -410,22 +421,74 @@ section .button button:hover {
 .services .box p {
   color: #666;
   line-height: 1.6;
-  margin-bottom: 15px;
+  font-size: 0.95rem;
+  flex: 1; /* Menyelaraskan tinggi konten */
 }
 
+/* Buttons Container */
+.services .box .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* General Styles for Buttons */
 .services .box .btn {
-  display: inline-block;
   padding: 10px 20px;
-  background-color: #4caf50;
-  color: #fff;
   border-radius: 5px;
   text-decoration: none;
+  font-size: 0.9rem;
   transition: background-color 0.3s;
 }
 
-.services .box .btn:hover {
-  background-color: #45a049;
+/* View Site Button Style */
+.services .box .view-site-btn {
+  background-color: #007bff; /* Blue color for View Site */
+  color: white;
 }
+
+.services .box .view-site-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* View Code Button Style */
+.services .box .view-code-btn {
+  background-color: #333; /* Dark color for View Code */
+  color: white;
+}
+
+.services .box .view-code-btn:hover {
+  background-color: #444; /* Slightly lighter on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services .content .title span {
+    font-size: 2rem;
+  }
+
+  .services .boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .services .box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services .content .title span {
+    font-size: 1.8rem;
+  }
+
+  .services .box .btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+
 
 /* Contact Me CSS */
 .contact {
